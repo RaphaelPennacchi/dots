@@ -1,0 +1,48 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+;==========================================================
+;        Files Includes
+;==========================================================
+
+[section/base]
+include-file = ~/.config/polybar/master.conf
+include-file = ~/.config/polybar/modules.conf
+
+[bar/eDPI1]
+inherit = bar/master
+monitor = eDP-1-1
+
+modules-left = bspwm
+modules-center = date
+modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery 
+
+[bar/HDMI0]
+inherit = bar/master
+monitor = HDMI-0
+
+modules-left = bspwm
+modules-center = date 
+modules-right = filesystem pulseaudio memory cpu wlan eth battery 
+
+tray-position = right
+
+[bar/eDPI1tray]
+inherit = bar/eDPI1
+
+tray-position = right
