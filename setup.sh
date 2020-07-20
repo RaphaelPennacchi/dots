@@ -20,3 +20,18 @@ dcfolder bspwm
 dcfolder kitty
 dcfolder polybar
 ln -sv $SCRIPTPATH/Code/settings.json ~/.config/Code/User/settings.json
+ln -sv $SCRIPTPATH/.zshrc ~/.zshrc
+ln -sv $SCRIPTPATH/.vimrc ~/.vimrc
+
+if [ ! -d ~/.oh-my-zsh ]
+then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "Ja existe"
+fi
+if [ ! -d ~/.vim/bundle ]
+then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+    echo "Ja existe"
+fi
